@@ -1,0 +1,23 @@
+button {
+    padding: 8px 24px 8px 24px;
+    font-size: larger;
+    color: var(--MainShadowColor);
+    background-color: var(--MainColor);
+
+    border-radius: 8px;
+    border-top: solid 4px var(--MainColorHighlight);
+    border-left: solid 4px var(--MainColorHighlight);
+    border-right: solid 4px var(--MainShadowColor);
+    border-bottom: solid 4px var(--MainShadowColor);
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+}
+
+button:active {filter: brightness(0.8);}
+
+.button-size2 {
+    font-size: xx-large;
+}

@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    color: var(--GeneralTextColor);
+    text-align: center;
+}
+
+a {color: var(--LinkTextColor);}
+
+.title {
+    padding: 20 20 20 20;
+    margin: 0;
+
+    color: var(--MainColor);
+    text-shadow: var(--MainShadowColor) 3px 3px;
+}
+
+.wrapper {
+    margin: 0;
+    min-height: fit-content;
+
+    background-size: cover;
+    background-image: url("/assets/background_blur.png");
+}
+
+.inner-column {
+    margin: 0 64px 0 64px;
+    min-width: 540px;
+    width: auto;
+
+    background-color: rgba(0, 0, 0, .8);
+    min-height: 100vh;
+}
+
+header {
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+footer {
+    padding: 8px;
+    background-color: rgb(20, 20, 20);
+}
+
+.footer-content{
+    margin-bottom: 12px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+.footer-credits {
+    display: flex;
+    flex-direction: column;
+}

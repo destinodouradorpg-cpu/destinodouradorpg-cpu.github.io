@@ -1,0 +1,15 @@
+@import url("/styles/button.css");
+@import url("/styles/font.css");
+@import url("/styles/default.css");
+@import url("/styles/vars.css");
+
+#main-title {font-size: 96px;}
+#about {font-size: 64px;}
+
+#about-text {
+    padding: 0 80px 20px 80px;
+    margin: 0;
+
+    text-align: justify;
+    font-size: 24px;
+}

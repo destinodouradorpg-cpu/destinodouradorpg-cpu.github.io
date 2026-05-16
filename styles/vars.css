@@ -1,0 +1,9 @@
+
+:root {
+    --MainColor: #d79d08;
+    --MainColorHighlight: #e7bf58;
+    --MainShadowColor: #7b2e21;
+    
+    --GeneralTextColor: white;
+    --LinkTextColor: rgb(164, 164, 164);
+}
