@@ -1,5 +1,5 @@
-@import url("/styles/button.css");
-@import url("/styles/font.css");
+@import url("/assets/styles/button.css");
+@import url("/assets/styles/font.css");
 @import url("vars.css");
 
 body {
