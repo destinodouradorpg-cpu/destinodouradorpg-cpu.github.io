@@ -1,3 +1,20 @@
 @import url("/assets/styles/default.css");
 
-#main-title {font-size: 96px;}
+#table-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.horzintal-flex {
+    display: flex;
+    gap: 24px;
+}
+
+#button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}

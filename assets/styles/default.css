@@ -25,7 +25,7 @@ a {color: var(--LinkTextColor);}
 }
 
 .inner-column {
-    padding: clamp(16px, 2vw, 48px);
+    padding: clamp(2px, 2vw, 48px);
     margin: 12px 12px 0 12px;
     width: auto;
     
@@ -114,4 +114,55 @@ footer {
 #menu a:hover {
     border-left: 2px solid var(--LinkTextColor);
     border-right: 2px solid var(--LinkTextColor);
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid var(--MainColor);
+    border-left: 2px solid var(--MainColorHighlight);
+
+    letter-spacing: 1px;
+    margin: auto;
+}
+
+caption {
+    padding: 5px;
+    font-weight: bold;
+
+    border-radius: 8px 8px 0 0;
+    border-top: 2px solid var(--MainColorHighlight);
+    border-left: 2px solid var(--MainColorHighlight);
+
+    background-color: var(--MainColor);
+    color: var(--MainShadowColor);
+}
+
+thead,
+tfoot {
+    padding: 6px;
+    
+    border-top: 2px solid var(--MainColorHighlight);
+    border-bottom: 2px solid var(--MainShadowColor);
+
+    background-color: var(--MainColor);
+    color: var(--MainShadowColor);
+}
+
+th, td {
+    padding: 4px 6px;
+    text-align: center;
+
+    border-left: 2px solid var(--MainColorHighlight);
+}
+
+td {
+    border-right: 2px solid var(--MainColor);
+    border-bottom: 2px solid var(--MainColor);
+
+    background-color: var(--BackgroundColorLight);
+}
+
+th {
+    background-color: var(--MainColor);
+    color: var(--MainShadowColor);
 }

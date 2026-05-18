@@ -22,6 +22,10 @@
     font-size: clamp(8px, 3vw, 16px);
 }
 
+.font-size-table {
+    font-size: clamp(10px, 2vw, 24px);
+}
+
 .text-lines, .title-lines {
     display: flex;
 

@@ -12,12 +12,269 @@
 </head>
 
 <body class="font-size-text old-standard-tt-regular">
-
     <div data-include="/assets/presets/menu.html"></div>
 
     <div class="inner-column opaque-background">
         <h1 class="title font-size-title title-lines" id="main-title">Equipamentos</h1>
+        <h2 class="title font-size-title-s title-lines" id="about">Sumário</h2>
 
+        <div id="button-container">
+            <button
+            class="old-standard-tt-regular"
+            onclick="window.location.href='/equipaments/#Bladed-Weapons'"
+            >Armas Brancas</button>
+
+            <button
+            class="old-standard-tt-regular"
+            onclick="window.location.href='/equipaments/#Ranged-Weapons'"
+            >Armas à Distância</button>
+
+            <button
+            class="old-standard-tt-regular"
+            onclick="window.location.href='/equipaments/#Fire-Weapons'"
+            >Armas de Fogo</button>
+
+            <button
+            class="old-standard-tt-regular"
+            onclick="window.location.href='/equipaments/#Arcane-Weapons'"
+            >Armas Arcanas</button>
+
+            <button
+            class="old-standard-tt-regular"
+            onclick="window.location.href='/equipaments/#Clothing-Armor'"
+            >Vestimentas/Armaduras</button>
+
+            <button
+            class="old-standard-tt-regular"
+            onclick="window.location.href='/equipaments/#Shields'"
+            >Escudos</button>
+
+            <button
+            class="old-standard-tt-regular"
+            onclick="window.location.href='/equipaments/#Tools'"
+            >Ferramentas</button>
+
+            <button
+            class="old-standard-tt-regular"
+            onclick="window.location.href='/equipaments/#Consumables'"
+            >Consumíveis</button>
+        </div>
+
+        <h2 class="title font-size-title-s title-lines" id="about">Equipamentos</h2>
+        <div id="table-container">
+            <table class="font-size-table">
+                <caption>Armas</caption>
+                <thead>
+                    <tr>
+                    <th>Nome</th>
+                    <th>Base</th>
+                    <th>Crítico</th>
+                    <th>Tamanho</th>
+                    <th>Dano</th>
+                    <th>Propriedades</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <th scope="row" colspan="6" id="Bladed-Weapons">Armas Brancas</th>
+                    <tr><td>Adaga</td><td>1</td><td>3</td><td>Pequeno</td><td>P</td><td>Arremesso, Gêmea, Frágil</td></tr>
+                    <tr><td>Faca</td><td>1</td><td>4</td><td>Pequeno</td><td>C</td><td>Gêmea</td></tr>
+                    <tr><td>Soco-Inglês</td><td>1</td><td>2</td><td>Minúsculo</td><td>I</td><td>Escondido, Segura</td></tr>
+                    <tr><td>Sabre</td><td>2</td><td>3</td><td>Pequeno</td><td>C</td><td>Sorrateira</td></tr>
+                    <tr><td>Rapieira</td><td>1d4-2</td><td>5</td><td>Pequeno</td><td>P</td><td>Investida, Sorrateira</td></tr>
+                    <tr><td>Katar</td><td>1</td><td>3</td><td>Pequeno</td><td>P</td><td>Segura</td></tr>
+                    <tr><td>Khopesh</td><td>2</td><td>3</td><td>Pequeno</td><td>C</td><td>Gancho</td></tr>
+                    <tr><td>Chackram</td><td>2</td><td>3</td><td>Minúsculo</td><td>C</td><td>Arremesso, Gêmeo</td></tr>
+                    <tr><td>Machete</td><td>2</td><td>4</td><td>Pequeno</td><td>C</td><td>Talho</td></tr>
+                    <tr><td>Machadinha</td><td>2</td><td>4</td><td>Pequeno</td><td>C</td><td>Arremesso</td></tr>
+                    <tr><td>Dardo e Corda</td><td>1</td><td>3</td><td>Pequeno</td><td>P</td><td>Corda, Fluxo</td></tr>
+                    <tr><td>Kusarigama</td><td>2</td><td>4</td><td>Pequeno</td><td>C/I</td><td>Corda, Frágil</td></tr>
+                    <tr><td>Adaga de Aparar</td><td>0</td><td>4</td><td>Pequeno</td><td>P</td><td>Gêmea</td></tr>
+                    <tr><td>Clava</td><td>2</td><td>3</td><td>Pequeno</td><td>I</td><td>Talho</td></tr>
+                    <tr><td>Martelo de mão</td><td>3</td><td>4</td><td>Pequeno</td><td>I</td><td>Lenta</td></tr>
+                    <tr><td>Espada Curta</td><td>2</td><td>4</td><td>Pequeno</td><td>C</td><td>Reforçada</td></tr>
+                    <tr><td>Foice</td><td>1</td><td>4</td><td>Pequeno</td><td>C</td><td>Gancho</td></tr>
+                    <tr><td>Tonfa</td><td>2</td><td>3</td><td>Pequeno</td><td>I</td><td>Segura, Gêmea</td></tr>
+                    <tr><td>Chicote</td><td>1</td><td>4</td><td>Pequeno</td><td>I</td><td>Corda</td></tr>
+                    <tr><td>Azagaia</td><td>2</td><td>4</td><td>Médio</td><td>P</td><td>Arremesso</td></tr>
+                    <tr><td>Espada Longa</td><td>3</td><td>5</td><td>Médio</td><td>C</td><td>Versátil</td></tr>
+                    <tr><td>Maça</td><td>2</td><td>4</td><td>Médio</td><td>I</td><td>Quebra</td></tr>
+                    <tr><td>Machado</td><td>4</td><td>5</td><td>Médio</td><td>C</td><td>Lenta</td></tr>
+                    <tr><td>Cimitarra</td><td>2</td><td>5</td><td>Médio</td><td>C</td><td>Sorrateira, Talho</td></tr>
+                    <tr><td>Martelo de Guerra</td><td>4</td><td>5</td><td>Médio</td><td>I</td><td>Duas Mãos</td></tr>
+                    <tr><td>Espada de Gancho</td><td>2</td><td>4</td><td>Médio</td><td>C</td><td>Gancho, Gêmea</td></tr>
+                    <tr><td>Martelo Meteoro</td><td>3</td><td>4</td><td>Médio</td><td>I</td><td>Corda, Fluxo</td></tr>
+                    <tr><td>Espada Carrasca</td><td>3</td><td>4</td><td>Médio</td><td>C</td><td>Versátil</td></tr>
+                    <tr><td>Katana</td><td>2</td><td>5</td><td>Médio</td><td>C</td><td>Sorrateira, Versátil</td></tr>
+                    <tr><td>Mangual</td><td>3</td><td>5</td><td>Médio</td><td>P</td><td>Lenta, Corda</td></tr>
+                    <tr><td>Macuahuitl</td><td>Ataque*-1</td><td>-</td><td>Médio</td><td>C</td><td>Talho</td></tr>
+                    <tr><td>Picareta</td><td>1</td><td>5</td><td>Médio</td><td>P</td><td>-</td></tr>
+                    <tr><td>Manopla</td><td>2</td><td>4</td><td>Médio</td><td>I</td><td>Complexa*, Gêmea</td></tr>
+                    <tr><td>Montante</td><td>4</td><td>6</td><td>Grande</td><td>C</td><td>Duas Mãos, Fluxo</td></tr>
+                    <tr><td>Lança</td><td>2</td><td>5</td><td>Grande</td><td>P</td><td>Arremesso, Extensa, Versátil</td></tr>
+                    <tr><td>Marreta</td><td>5</td><td>7</td><td>Grande</td><td>I</td><td>Duas Mãos, Lenta, Quebrador</td></tr>
+                    <tr><td>Alabarda</td><td>4</td><td>6</td><td>Grande</td><td>C/P</td><td>Duas Mãos, Extensa, Investida</td></tr>
+                    <tr><td>Tridente</td><td>4</td><td>5</td><td>Grande</td><td>P</td><td>Arremesso, Extensa</td></tr>
+                    <tr><td>Gadanha</td><td>3</td><td>7</td><td>Grande</td><td>C</td><td>Duas Mãos, Gancho</td></tr>
+                    <tr><td>Corrente com Cravos</td><td>3</td><td>5</td><td>Grande</td><td>C</td><td>Duas Mãos, Corda, Talho</td></tr>
+                    <tr><td>Lança Montada</td><td>3</td><td>6</td><td>Grande</td><td>P</td><td>Extensa, Investida</td></tr>
+                    <tr><td>Machado de Guerra</td><td>6</td><td>7</td><td>Grande</td><td>C</td><td>Duas Mãos, Lenta</td></tr>
+                    <tr><td>Bastão</td><td>3</td><td>5</td><td>Grande</td><td>I</td><td>Fluxo, Frágil, Versátil</td></tr>
+                    <tr><td>Machado Leque</td><td>3</td><td>6</td><td>Grande</td><td>C/I</td><td>Fluxo</td></tr>
+                    <tr><td>Pique</td><td>2</td><td>10</td><td>Gigante</td><td>P</td><td>Duas Mãos, Extensa</td></tr>
+
+                    <th scope="row" colspan="6" id="Ranged-Weapons">Arma à Distância</th>
+                    <tr><td>Arco Curto</td><td>1</td><td>3</td><td>Pequeno</td><td>P</td><td>-</td></tr>
+                    <tr><td>Arco de Caça</td><td>2</td><td>5</td><td>Médio</td><td>P</td><td>-</td></tr>
+                    <tr><td>Arco de Guerra</td><td>3</td><td>4</td><td>Médio</td><td>P</td><td>-</td></tr>
+                    <tr><td>Arco Longo</td><td>3</td><td>6</td><td>Grande</td><td>P</td><td>Estável</td></tr>
+                    <tr><td>Besta de Mão</td><td>2</td><td>4</td><td>Pequeno</td><td>P</td><td>Escondido / 1</td></tr>
+                    <tr><td>Besta</td><td>3</td><td>5</td><td>Médio</td><td>P</td><td>- / 1</td></tr>
+                    <tr><td>Balestra</td><td>4</td><td>6</td><td>Grande</td><td>P</td><td>- / 1</td></tr>
+                    <tr><td>Besta de Repetição</td><td>2</td><td>4</td><td>Médio</td><td>P</td><td>Tiro Rápido / 8</td></tr>
+                    <tr><td>Estilingue</td><td>0</td><td>4</td><td>Minúsculo</td><td>I</td><td>Escondido</td></tr>
+                    <tr><td>Funda</td><td>3</td><td>4</td><td>Médio</td><td>I</td><td>Quebra</td></tr>
+                    <tr><td>Bumerangue</td><td>2</td><td>3</td><td>Médio</td><td>I/C</td><td>Retorna</td></tr>
+                    <tr><td>Estrela</td><td>1</td><td>4</td><td>3x Minúsculo</td><td>C</td><td>Escondido</td></tr>
+                    <tr><td>Zarabatana</td><td>1</td><td>3</td><td>Pequeno</td><td>P</td><td>-</td></tr>
+                    <tr><td>Dardo</td><td>2</td><td>3</td><td>3x Pequeno</td><td>P</td><td>Escondido</td></tr>
+                    <tr><td>Hwacha de Mão</td><td>4</td><td>6</td><td>Grande</td><td>I</td><td>Explosivo / 4</td></tr>
+                
+                    <th scope="row" colspan="6" id="Fire-Weapons">Armas de Fogo</th>
+                    <tr><td>Pistola</td><td>2</td><td>4</td><td>Pequeno</td><td>P</td><td>- / 1</td></tr>
+                    <tr><td>Mosquete</td><td>3</td><td>5</td><td>Médio</td><td>P</td><td>- / 1</td></tr>
+                    <tr><td>Bacamarte</td><td>3</td><td>6</td><td>Médio</td><td>I</td><td>Explosivo, Q.R. / 1</td></tr>
+                    <tr><td>Pimenteira</td><td>2</td><td>3</td><td>Pequeno</td><td>P</td><td>Tiro Rápido / 3</td></tr>
+                    <tr><td>Carabina</td><td>1</td><td>4</td><td>Médio</td><td>P</td><td>Tiro Rápido / 8</td></tr>
+                    <tr><td>Caçadeira</td><td>4</td><td>5</td><td>Médio</td><td>I</td><td>Q.R. / 2</td></tr>
+                    <tr><td>Canhão Portátil</td><td>7</td><td>10</td><td>Gigante</td><td>I</td><td>Estável / 1</td></tr>
+                
+                    <th scope="row" colspan="6" id="Arcane-Weapons">Armas Arcanas</th>
+                    <tr><td>Cajado</td><td>-</td><td>-</td><td>Médio</td><td>-</td><td>-</td></tr>
+                    <tr><td>Varinha</td><td>-</td><td>-</td><td>Pequeno</td><td>-</td><td>-</td></tr>
+                    <tr><td>Tomo</td><td>-</td><td>-</td><td>Pequeno</td><td>-</td><td>-</td></tr>
+                    <tr><td>Orbe</td><td>-</td><td>-</td><td>Pequeno</td><td>-</td><td>-</td></tr>
+                    <tr><td>Pingente</td><td>-</td><td>-</td><td>Minúsculo</td><td>-</td><td>-</td></tr>
+                </tbody>
+            </table>    
+
+            <table class="font-size-table" id="Clothing-Armor">
+                <caption>Vestimentas/Armaduras</caption>
+                <thead>
+                    <tr>
+                    <th>Nome</th>
+                    <th>Ocupa</th>
+                    <th>Bônus</th>
+                    <th>Propriedades</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bota Reforçada</td><td>Pés</td><td>Ignora Terreno</td><td>-</td></tr>
+                    <tr><td>Jaqueta de Frio</td><td>Torso, Braços</td><td>Ignora Frio Extremo</td><td>-</td></tr>
+                    <tr><td>Camuflagem</td><td>Cabeça, Torso</td><td>Vantagem ao se esconder</td><td>Complexa</td></tr>
+                    <tr><td>Óculos Circular</td><td>Cabeça</td><td>Protege contra cegueira e neblina</td><td>-</td></tr>
+                    <tr><td>Roupa Chique</td><td>Torso, Pernas</td><td>Vantagem em testes com nobreza</td><td>Chamativa</td></tr>
+                    <tr><td>Cinto de Utilidade</td><td>Acessório</td><td>Sacar item como ação livre</td><td>-</td></tr>
+                    <tr><td>Túnica</td><td>Torso</td><td>+1 PE</td><td>-</td></tr>
+                    <tr><td>Capa</td><td>Torso</td><td>+2 PE</td><td>Chamativa</td></tr>
+                    <tr><td>Manto</td><td>Torso, Membros</td><td>Esconde identidade</td><td>Pesada</td></tr>
+                    <tr><td>Mochila Pequena</td><td>-</td><td>+3 Espaços</td><td>-</td></tr>
+                    <tr><td>Mochila Média</td><td>-</td><td>+5 Espaços</td><td>-</td></tr>
+                    <tr><td>Mochila Grande</td><td>Torso</td><td>+7 Espaços</td><td>Pesada quando cheia</td></tr>
+                    <tr><td>Armadura Batida</td><td>Torso, Membros</td><td>+2 PV</td><td>-</td></tr>
+                    <tr><td>Armadura de Cota</td><td>Torso, Cabeça</td><td>+5 PV / -2 PE</td><td>-</td></tr>
+                    <tr><td>Armadura de Pele</td><td>Torso</td><td>2 Resistência / -1 PE</td><td>-</td></tr>
+                    <tr><td>Meia Armadura</td><td>Torso, Membros</td><td>+7 PV / -4 PE</td><td>Chamativa</td></tr>
+                    <tr><td>Armadura Completa</td><td>Corpo Todo</td><td>+10 PV / -6 PE</td><td>Complexa, Pesada, Chamativa</td></tr>
+                </tbody>
+            </table>
+
+            <table class="font-size-table" id="Shields">
+                <caption>Escudos</caption>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tamanho</th>
+                        <th>Bloqueia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Broquel </td><td>Pequeno</td> <td>4 ou +</td></tr>
+                    <tr><td>Escudo Redondo </td><td>Médio</td> <td>3 ou +</td>   </tr>
+                    <tr><td>Escudo Triangular </td><td>Médio</td> <td>3 ou +</td></tr>
+                    <tr><td>Escudo Longo </td><td>Grande</td> <td>2 ou +</td></tr>
+                    <tr><td>Escudo Pavês </td><td>Grande</td> <td>2 ou +</td></tr>
+                </tbody>
+            </table>
+
+            <table class="font-size-table" id="Tools">
+                <caption>Ferramentas</caption>
+                <thead>
+                    <tr>
+                    <th>Nome</th>
+                    <th>Tamanho</th>
+                    <th>Função</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <th scope="row" colspan="3">Trabalho</th>
+                    <tr><td>Ferramentas de ()</td><td>Pequeno</td><td>Remove a desvantagem do teste que as usa</td></tr>
+                    <tr><td>Pá</td><td>Médio</td><td>Cava sem teste</td></tr>
+                    <tr><td>Pé de Cabra</td><td>Médio</td><td>Arromba fechaduras sem teste</td></tr>
+
+                    <th scope="row" colspan="3">Iluminação</th>
+                    <tr><td>Tocha</td><td>Médio</td><td>Ilumina um raio de 10 metros</td></tr>
+                    <tr><td>Lampião</td><td>Pequeno</td><td>Ilumina um raio de 7 metros, pode ser pendurado</td></tr>
+
+                    <th scope="row" colspan="3">Cozinha</th>
+                    <tr><td>Panela(s)</td><td>Pequeno</td><td>Esquenta comida sem estragar</td></tr>
+                    <tr><td>Caldeirão</td><td>Grande</td><td>Usado para sopas e poções em grande escala</td></tr>
+                    <tr><td>Garrafa(s)</td><td>Minúsculo</td><td>Conserva líquidos</td></tr>
+                    
+                    <th scope="row" colspan="3">Utilitários</th>
+                    <tr><td>Gazua</td><td>Minúsculo</td><td>Usada para destrancar fechaduras</td></tr>
+                    <tr><td>Corda</td><td>1 Esp/5m</td><td>Uso geral</td></tr>
+                    <tr><td>Pano</td><td>1 Esp/3m</td><td>Usado para tecidos, roupas, capas etc.</td></tr>
+                    <tr><td>Luneta</td><td>Minúsculo</td><td>Ver longas distâncias e analisar inimigos</td></tr>
+                    <tr><td>Boleadeira</td><td>Médio</td><td>Arremessar para amarrar e derrubar (teste de agilidade)</td></tr>
+                    <tr><td>Instrumento Musical</td><td>Variável</td><td>Aumenta alcance sonoro / +2 em testes de performar</td></tr>
+                    <tr><td>Saco Largo</td><td>Médio</td><td>Armazena itens (4 espaços)</td></tr>
+                    <tr><td>Brinquedo</td><td>Minúsculo</td><td>Vantagem em testes de distrair e confundir</td></tr>
+                    <tr><td>Disfarce</td><td>Pequeno</td><td>Permite mudar aparência</td></tr>
+                    <tr><td>Piolet</td><td>Pequeno</td><td>Vantagem em testes de escalar</td></tr>
+                    <tr><td>Saco de Dormir</td><td>Médio</td><td>Descanso curto recupera +5 PV e PE</td></tr>
+                    <tr><td>Cantil</td><td>Pequeno</td><td>Guarda água purificada (não conserva)</td></tr>
+                    <tr><td>Pederneira</td><td>Pequeno</td><td>Usado para fazer fogo</td></tr>
+
+                    <th scope="row" colspan="3">Exotérico</th>
+                    <tr><td>Livro</td><td>Pequeno</td><td>Anotar feitiços e runas</td></tr>
+                    <tr><td>Giz Mágico</td><td>Minúsculo</td><td>Protege círculos mágicos de serem apagados</td></tr>
+                </tbody>
+                </table>
+
+            <table class="font-size-table" id="Consumables">
+                <caption>Consumíveis</caption>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tamanho</th>
+                        <th>Bloqueia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Bomba</td><td>Minúsculo</td><td>5 de dano (I) num raio de 5 metros</td></tr>
+                    <tr><td>Molotov</td><td>Minúsculo</td><td>Aplica Fogo e Queimando num raio de 5 metros</td></tr>
+                    <tr><td>Cortina de Fumaça</td><td>Minúsculo</td><td>Faz uma “Neblina” num raio de 7 metros</td></tr>
+                    <tr><td>Atadura</td><td>Minúsculo</td><td>Para Sangrando e cura 2 PV</td></tr>
+                    <tr><td>Kit Médico</td><td>Médio</td><td>Para Sangrando e Veneno e cura 6 PV</td></tr>
+                    <tr><td>Incenso</td><td>Minúsculo</td><td>Aumenta danos p/fontes Mágicas em +3 numa área de 5 metros (2 turnos)</td></tr>
+                    <tr><td>Opioides</td><td>Minúsculo</td><td>Recupera 2 PS. Aplica Tonto</td></tr>
+                    <tr><td>Injetor de Energia</td><td>Pequeno</td><td>Aumenta movimentação em 5 metros, +2 em testes de Agilidade. Tira 2 PV</td></tr>
+                    <tr><td>Poção Menor</td><td>3xMinúsculo</td><td>Vários</td></tr>
+                    <tr><td>Poção</td><td>Minúsculo</td><td>Vários</td>
+                    <tr><td>Poção Maior</td><td>Pequeno</td><td>Vários</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div data-include="/assets/presets/footer.html"></div>
