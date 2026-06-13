@@ -1,0 +1,12 @@
+@import url("/assets/styles/default.css");
+
+#main-title {  padding-bottom: 0; }
+
+.inner-column > * {text-align: left;}
+.inner-column > h3, h4 {text-decoration: underline;}
+
+.text-box {
+    margin: 0;
+    text-align: justify;
+    justify-content: left;
+}

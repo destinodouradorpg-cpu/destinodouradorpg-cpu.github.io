@@ -1,11 +1,10 @@
-
 :root {
     --MainColor: #d79d08;
     --MainColorHighlight: #e7bf58;
     --MainShadowColor: #7b2e21;
     
-    --GeneralTextColor: rgb(255, 233, 179);
-    --LinkTextColor: rgb(231, 199, 120);
+    --GeneralTextColor: #ffe9b3;
+    --LinkTextColor: #e7c778;
     --BackgroundColor: #000000;
     --BackgroundColorLight: #0f0f0f;
 }

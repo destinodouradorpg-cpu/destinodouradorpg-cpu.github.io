@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <title>Destino Dourado RPG</title>
+    <link rel="icon" href="/assets/icon.webp">
+    <link rel="stylesheet" href="index.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Destino Dourado RPG - Fichas">
+    <meta property="og:description" content="'Sheets' e não 'Shits'">
+</head>
+
+<body class="font-size-text old-standard-tt-regular">
+    <div data-include="/assets/presets/menu.html"></div>
+    
+    <div class="inner-column opaque-background">
+        <h1 id="main-title" class="font-size-title title title-lines">Ficha</h1>
+        <div>
+            <h2 class="text-lines">Geral</h2>
+
+            <div id="general-container">
+                <input id="name-field"
+                type="text"
+                class="alt-color font-size-text old-standard-tt-regular" 
+                placeholder="Nome"
+                >
+
+                <input id="player-field"
+                type="text"
+                class="alt-color font-size-text old-standard-tt-regular" 
+                placeholder="Jogador"
+                >
+
+                <div id="sheet-image-container"><img id=""></div>
+
+                <div>
+                    <label for="level-field">Nível:</label>
+                    <input name="level-field"
+                    type="number"
+                    min="0" max="50" value="0"
+                    class="alt-color font-size-text old-standard-tt-regular"
+                    >
+                </div>
+
+                <span>Movimentação: 0m</span>
+
+                <label for="race">Raça:</label>
+                <select name="race">
+
+                </select>
+
+                <label for="class">Classe:</label>
+                <select name="class">
+
+                </select>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-lines">Atributos</h2>
+            <div id="attribute-container">
+                <div id="attribute-strength" class="attribute-cell">
+                    <span>Força</span>      
+                    <div>
+                        <button>-</button>
+                        <span class="attribute-value">0/5</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div id="attribute-agility" class="attribute-cell">
+                    <span>Agilidade</span>  
+                    <div>
+                        <button>-</button>
+                        <span class="attribute-value">0/5</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div id="attribute-resistance" class="attribute-cell">
+                    <span>Resistência</span>
+                    <div>
+                        <button>-</button>
+                        <span class="attribute-value">0/5</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div id="attribute-stealth" class="attribute-cell">
+                    <span>Sutileza</span>   
+                    <div>
+                        <button>-</button>
+                        <span class="attribute-value">0/5</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div id="attribute-luck" class="attribute-cell">
+                    <span>Sorte</span>      
+                    <div>
+                        <button>-</button>
+                        <span class="attribute-value">0/5</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div id="attribute-charisma" class="attribute-cell">
+                    <span>Carisma</span>    
+                    <div>
+                        <button>-</button>
+                        <span class="attribute-value">0/5</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div id="attribute-inteligence" class="attribute-cell">
+                    <span>Inteligência</span>
+                    <div>
+                        <button>-</button>
+                        <span class="attribute-value">0/5</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div id="attribute-mind" class="attribute-cell">
+                    <span>Mente</span>      
+                    <div>
+                        <button>-</button>
+                        <span class="attribute-value">0/5</span>
+                        <button>+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-include="/assets/presets/footer.html"></div>
+
+    <script src="/assets/scripts/htmlinclude.js"></script>
+    <script src="/assets/scripts/menu.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <title>Destino Dourado RPG</title>
+    <link rel="icon" href="/assets/icon.webp">
+    <link rel="stylesheet" href="index.css">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Destino Dourado RPG - Fichas">
+    <meta property="og:description" content="'Sheets' e não 'Shits'">
+</head>
+
+
+<body class="font-size-text old-standard-tt-regular">
+    <div data-include="/assets/presets/menu.html"></div>
+    
+    <div id="create-sheet-prompt">
+        <div class="prompt">
+            <span class="font-size-title-s">Criar Nova Ficha?</span>
+            
+            <input 
+             id="sheet-name-field"
+             class="font-size-text-s old-standard-tt-regular" 
+             type="text" 
+             placeholder="Nome"
+            >
+
+            <div class="button-holder title-lines">
+                <button
+                 id="dont-create-sheet-button"
+                 class="old-standard-tt-regular font-size-text alt-color"
+                >Cancelar</button>
+                <button
+                 id="create-sheet-button"
+                 class="old-standard-tt-regular font-size-text"
+                >Criar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="inner-column opaque-background">
+        <h1 id="main-title" class="title font-size-title title-lines">Fichas</h1>
+        <div id="sheet-container">
+            <template id="sheet-template">
+                <div class="sheet">
+                    <img class="sheet-image">
+                    <span class="sheet-text">TEMPLATE</span>
+                </div>
+            </template>
+
+            <button id="sheet-add" class="font-size-title">
+                <img src="/assets/icons/plus.svg">
+            </button>
+        </div>
+    </div>
+
+    <div data-include="/assets/presets/footer.html"></div>
+
+    <script src="/assets/scripts/htmlinclude.js"></script>
+    <script src="/assets/scripts/menu.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,7 +1,14 @@
 document.addEventListener("click", (e) => {
-    if (e.target.id === "menu-button") {
     const menu = document.getElementById("menu");
-    e.target.classList.toggle("active");
-    menu.classList.toggle("active");
+    const clicked = e.target;
+
+    if (clicked.id === "menu-button") {
+        menu.classList.toggle("active");
+    }
+
+    if (menu.classList.contains("active")){
+        if (!menu.contains(clicked) && clicked.id != "menu-button"){
+            menu.classList.toggle("active");
+        }
     }
 });

@@ -6,10 +6,10 @@ button {
     background-color: var(--MainColor);
 
     border-radius: 8px;
-    border-top: solid 4px var(--MainColorHighlight);
-    border-left: solid 4px var(--MainColorHighlight);
-    border-right: solid 4px var(--MainShadowColor);
-    border-bottom: solid 4px var(--MainShadowColor);
+    border-top: solid 2px var(--MainColorHighlight);
+    border-left: solid 2px var(--MainColorHighlight);
+    border-right: solid 2px var(--MainShadowColor);
+    border-bottom: solid 2px var(--MainShadowColor);
 }
 
 button:hover {
@@ -18,3 +18,13 @@ button:hover {
 }
 
 button:active {filter: brightness(0.8);}
+
+button.alt-color {
+    color: var(--MainHighlightColor);
+    background-color: var(--MainShadowColor);
+
+    border-top: solid 2px var(--MainColorHighlight);
+    border-left: solid 2px var(--MainColorHighlight);
+    border-right: solid 2px var(--MainColor);
+    border-bottom: solid 2px var(--MainColor);
+}
