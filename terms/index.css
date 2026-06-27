@@ -5,6 +5,9 @@
 .inner-column > * {text-align: left;}
 .inner-column > h3, h4 {text-decoration: underline;}
 
+ul {padding-left: 20px;}
+li {margin: 8px 0px;}
+
 .text-box {
     margin: 0;
     text-align: justify;

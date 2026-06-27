@@ -13,125 +13,381 @@
 </head>
 
 <body class="font-size-text old-standard-tt-regular">
-    <div data-include="/assets/presets/menu.html"></div>
     
     <div class="inner-column opaque-background">
         <h1 id="main-title" class="font-size-title title title-lines">Ficha</h1>
-        <div>
+    
+        <!--GENERAL-->
+        <div class="category">
             <h2 class="text-lines">Geral</h2>
 
             <div id="general-container">
-                <input id="name-field"
+                <input 
+                id="name-field"
                 type="text"
                 class="alt-color font-size-text old-standard-tt-regular" 
                 placeholder="Nome"
+                sheet-path="name"
                 >
 
                 <input id="player-field"
                 type="text"
                 class="alt-color font-size-text old-standard-tt-regular" 
                 placeholder="Jogador"
+                sheet-path="player"
                 >
 
-                <div id="sheet-image-container"><img id=""></div>
-
-                <div>
-                    <label for="level-field">Nível:</label>
-                    <input name="level-field"
-                    type="number"
-                    min="0" max="50" value="0"
-                    class="alt-color font-size-text old-standard-tt-regular"
+                <div id="sheet-image-container">
+                    <img id="sheet-image" sheet-path="image" src="" alt="Imagem Do Personagem">
+                    <input
+                     type="file"
+                     id="sheet-image-input"
+                     accept="image/*"
+                     style="display: none;"
                     >
                 </div>
 
-                <span>Movimentação: 0m</span>
+                <div style="align-content: center;">
+                    <label for="level-field">Nível:</label>
+                    <input 
+                     name="level-field"
+                     id="sheet-level-field"
+                     type="number"
+                     min="0" max="50" value="0" step="1"
+                     pattern="[0-9]"
+                     class="alt-color font-size-text old-standard-tt-regular"
+                     sheet-path="level"
+                    >
+                </div>
 
+                <span>Movimentação: <span id="movement-value">0m</span></span>
+                
                 <label for="race">Raça:</label>
-                <select name="race">
+                <select id="race-selector" name="race" sheet-path="race">
 
                 </select>
 
                 <label for="class">Classe:</label>
-                <select name="class">
+                <select id="class-selector" name="class" sheet-path="class">
 
                 </select>
+
+                <div class="cell main-attribute-container">
+                    <span class="text-lines">PV</span>
+                    <span class="font-size-title-s">0</span>
+                    <div class="label-input-container">
+                        <label for="base-hp">Base:</label>
+                        <input 
+                         name="base-hp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                    <span id="armor-hp">Armad.: <span>0</span></span>
+                    <div class="label-input-container">
+                        <label for="level-hp">Nível:</label>
+                        <input 
+                         name="level-hp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                    <div class="label-input-container">
+                        <label for="bonus-hp">Bônus:</label>
+                        <input 
+                         name="bonus-hp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                </div>
+                <div class="cell main-attribute-container">
+                    <span class="text-lines">PE</span>
+                    <span class="font-size-title-s">0</span>
+                    <div class="label-input-container">
+                        <label for="base-mp">Base:</label>
+                        <input 
+                         name="base-mp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                    <span id="armor-mp">Armad.: <span>0</span></span>
+                    <div class="label-input-container">
+                        <label for="level-mp">Nível:</label>
+                        <input 
+                         name="level-mp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                    <div class="label-input-container">
+                        <label for="bonus-mp">Bônus:</label>
+                        <input 
+                         name="bonus-mp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                </div>
+                <div class="cell main-attribute-container">
+                    <span class="text-lines">PS</span>
+                    <span class="font-size-title-s">0</span>
+                    <div class="label-input-container">
+                        <label for="base-sp">Base:</label>
+                        <input 
+                         name="base-sp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                    <span id="armor-sp">Armad.: <span>0</span></span>
+                    <div class="label-input-container">
+                        <label for="level-sp">Nível:</label>
+                        <input 
+                         name="level-sp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                    <div class="label-input-container">
+                        <label for="bonus-sp">Bônus:</label>
+                        <input 
+                         name="bonus-sp" 
+                         type="number"
+                         pattern="[0-9]"
+                         class="alt-color font-size-text old-standard-tt-regular"
+                         min="0" max="99" step="1" value="0"
+                        >
+                    </div>
+                </div>
             </div>
         </div>
-        <div>
+
+        <!--ATTRIBUTES-->
+        <div class="category">
             <h2 class="text-lines">Atributos</h2>
             <div id="attribute-container">
-                <div id="attribute-strength" class="attribute-cell">
-                    <span>Força</span>      
-                    <div>
-                        <button>-</button>
-                        <span class="attribute-value">0/5</span>
-                        <button>+</button>
-                    </div>
+                <div
+                 class="cell attribute-cell"
+                 sheet-path="attribute.strength"
+                >
+                    <span class="attribute-name">Força</span>      
+                    <span class="attribute-value">0/5</span>
                 </div>
-                <div id="attribute-agility" class="attribute-cell">
-                    <span>Agilidade</span>  
-                    <div>
-                        <button>-</button>
-                        <span class="attribute-value">0/5</span>
-                        <button>+</button>
-                    </div>
+
+                <div
+                 class="cell attribute-cell"
+                 sheet-path="attribute.agility"
+                >
+                    <span class="attribute-name">Agilidade</span>  
+                    <span class="attribute-value">0/5</span>
                 </div>
-                <div id="attribute-resistance" class="attribute-cell">
-                    <span>Resistência</span>
-                    <div>
-                        <button>-</button>
-                        <span class="attribute-value">0/5</span>
-                        <button>+</button>
-                    </div>
+
+                <div
+                 class="cell attribute-cell"
+                 sheet-path="attribute.resistance"
+                >
+                    <span class="attribute-name">Resistência</span>
+                    <span class="attribute-value">0/5</span>
                 </div>
-                <div id="attribute-stealth" class="attribute-cell">
-                    <span>Sutileza</span>   
-                    <div>
-                        <button>-</button>
-                        <span class="attribute-value">0/5</span>
-                        <button>+</button>
-                    </div>
+
+                <div
+                 class="cell attribute-cell"
+                 sheet-path="attribute.stealth"
+                >
+                    <span class="attribute-name">Sutileza</span>   
+                    <span class="attribute-value">0/5</span>
                 </div>
-                <div id="attribute-luck" class="attribute-cell">
-                    <span>Sorte</span>      
-                    <div>
-                        <button>-</button>
-                        <span class="attribute-value">0/5</span>
-                        <button>+</button>
-                    </div>
+
+                <div
+                 class="cell attribute-cell"
+                 sheet-path="attribute.luck"
+                >
+                    <span class="attribute-name">Sorte</span>      
+                    <span class="attribute-value">0/5</span>
                 </div>
-                <div id="attribute-charisma" class="attribute-cell">
-                    <span>Carisma</span>    
-                    <div>
-                        <button>-</button>
-                        <span class="attribute-value">0/5</span>
-                        <button>+</button>
-                    </div>
+
+                <div
+                 class="cell attribute-cell"
+                 sheet-path="attribute.charisma"
+                >
+                    <span class="attribute-name">Carisma</span>    
+                    <span class="attribute-value">0/5</span>
                 </div>
-                <div id="attribute-inteligence" class="attribute-cell">
-                    <span>Inteligência</span>
-                    <div>
-                        <button>-</button>
-                        <span class="attribute-value">0/5</span>
-                        <button>+</button>
-                    </div>
+
+                <div
+                 class="cell attribute-cell"
+                 sheet-path="attribute.inteligence"
+                >
+                    <span class="attribute-name">Inteligência</span>
+                    <span class="attribute-value">0/5</span>
                 </div>
-                <div id="attribute-mind" class="attribute-cell">
-                    <span>Mente</span>      
+
+                <div
+                 class="cell attribute-cell"
+                 sheet-path="attribute.mind"
+                >
+                    <span class="attribute-name">Mente</span>      
+                    <span class="attribute-value">0/5</span>
+                </div>
+            </div>
+        </div>
+
+        <!--SKILLS-->
+        <div class="category">
+            <h2 class="text-lines">Habilidades</h2>
+            <div id="skill-container">
+                <div class="cell skill-cell" sheet-path="skills.1">
+                    <h3 class="text-lines">Habilidade 1</h3>
                     <div>
-                        <button>-</button>
-                        <span class="attribute-value">0/5</span>
-                        <button>+</button>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
                     </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.2">
+                    <h3 class="text-lines">Habilidade 2</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.3">
+                    <h3 class="text-lines">Habilidade 3</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.4">
+                    <h3 class="text-lines">Habilidade 4</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.5">
+                    <h3 class="text-lines">Habilidade 5</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.6">
+                    <h3 class="text-lines">Habilidade 6</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.7">
+                    <h3 class="text-lines">Habilidade 7</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.8">
+                    <h3 class="text-lines">Habilidade 8</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.9">
+                    <h3 class="text-lines">Habilidade 9</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.10">
+                    <h3 class="text-lines">Habilidade 10</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.11">
+                    <h3 class="text-lines">Habilidade 11</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
+                </div>
+                
+                <div class="cell skill-cell" sheet-path="skills.12">
+                    <h3 class="text-lines">Habilidade 12</h3>
+                    <div>
+                        <span>Ação: <span>---</span></span>
+                        |
+                        <span>Custo: <span>---</span></span>
+                    </div>
+                    <p>Descrição</p>
+                    <span>Melhorias: <span>0</span></span>
                 </div>
             </div>
         </div>
     </div>
-
-    <div data-include="/assets/presets/footer.html"></div>
-
-    <script src="/assets/scripts/htmlinclude.js"></script>
-    <script src="/assets/scripts/menu.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>

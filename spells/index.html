@@ -13,8 +13,6 @@
 </head>
 
 <body class="font-size-text old-standard-tt-regular">
-    <div data-include="/assets/presets/menu.html"></div>
-
     <div class="inner-column opaque-background">
         <h1 class="title font-size-title title-lines" id="main-title">Filtro de Feitiços</h1>
         <h2 class="title font-size-title-s title-lines" id="filters">Filtros</h2>
@@ -29,14 +27,14 @@
         <br>
 
         <div id="filter-container" class="font-size-input">
-            <input class="old-standard-tt-regular" type="text" id="Elements" placeholder="Elementos" onkeyup="filterTable()">
-            <input class="old-standard-tt-regular" type="text" id="Name" placeholder="Nome" onkeyup="filterTable()">
-            <input class="old-standard-tt-regular" type="text" id="Degree" placeholder="Grau" onkeyup="filterTable()">
-            <input class="old-standard-tt-regular" type="text" id="Cost" placeholder="Custo" onkeyup="filterTable()">
-            <input class="old-standard-tt-regular" type="text" id="Duration" placeholder="Duração" onkeyup="filterTable()">
-            <input class="old-standard-tt-regular" type="text" id="Time" placeholder="Tempo" onkeyup="filterTable()">
-            <input class="old-standard-tt-regular" type="text" id="Range" placeholder="Alcance" onkeyup="filterTable()">
-            <input class="old-standard-tt-regular" type="text" id="Requirements" placeholder="Requisitos" onkeyup="filterTable()">
+            <input class="old-standard-tt-regular" type="text" id="Elements" placeholder="Elementos">
+            <input class="old-standard-tt-regular" type="text" id="Name" placeholder="Nome">
+            <input class="old-standard-tt-regular" type="text" id="Degree" placeholder="Grau">
+            <input class="old-standard-tt-regular" type="text" id="Cost" placeholder="Custo">
+            <input class="old-standard-tt-regular" type="text" id="Duration" placeholder="Duração">
+            <input class="old-standard-tt-regular" type="text" id="Time" placeholder="Tempo">
+            <input class="old-standard-tt-regular" type="text" id="Range" placeholder="Alcance">
+            <input class="old-standard-tt-regular" type="text" id="Requirements" placeholder="Requisitos">
         </div>
 
         <br>
@@ -62,11 +60,6 @@
         </div>
     </div>
 
-    <div data-include="/assets/presets/footer.html"></div>
-
-    <script src="/assets/scripts/htmlinclude.js"></script>
-    <script src="/assets/scripts/menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>

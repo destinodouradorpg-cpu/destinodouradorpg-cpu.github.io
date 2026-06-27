@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "target": "ES2022",
+        "lib": ["ES2022", "DOM"],
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "allowJs": true,
+
+        "baseUrl": ".",
+        "paths": {
+            "/assets/*": ["assets/*"]
+        }
+    },
+    "exclude": ["node_modules"]
+}

@@ -27,4 +27,8 @@ button.alt-color {
     border-left: solid 2px var(--MainColorHighlight);
     border-right: solid 2px var(--MainColor);
     border-bottom: solid 2px var(--MainColor);
+
+    box-shadow: 
+        inset 4px 4px 4px var(--MainShadowColorDark),
+        4px 4px 4px rgba(0, 0, 0, .4);
 }

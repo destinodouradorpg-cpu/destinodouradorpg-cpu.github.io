@@ -1,113 +1,72 @@
+import * as Prompt from "/assets/scripts/prompts.js"
+import * as SheetDB from "/assets/scripts/sheet-database.js"
+import "/assets/scripts/init.js"
+
 // BUTTON HANDLING
-const popup = document.getElementById("create-sheet-prompt");
-const sheet_name_field = document.getElementById("sheet-name-field");
+const popup = await Prompt.loadPrompt("/assets/html/prompts/create-sheet.html", () => {});
 
-document.addEventListener("click", (e) => {
-    switch (e.target.id){
-        case "sheet-add": 
-            popup.style.display = "flex";
-            sheet_name_field.value = "";
-            break;
-        case "dont-create-sheet-button": 
-            popup.style.display = "none";
-            break;
-        case "create-sheet-button":
-            createNewSheet().then((sheet) => {
-                popup.style.display = "none";
-                window.location.href = `/sheets/edit/?id=${encodeURIComponent(sheet.id)}`;
-            });
+popup.addEventListener("on-open", () => {
+    const name_field = popup.base.querySelector("#sheet-name-field");
+    if (name_field instanceof HTMLInputElement)
+        name_field.value = "";
+})
 
-            break;
-    };
-});
+popup.button("#create-sheet-button", async () => {
+    const db = await SheetDB.getDB();
+    const sheet = SheetDB.Sheet.empty();
 
-// KEY HANDLING
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        if (popup.style.display != "none"){
-            event.preventDefault();
-            popup.style.display = "none";
-        }
+    const name_field = popup.base.querySelector("#sheet-name-field")
+    if (!(name_field instanceof HTMLInputElement)){
+        console.error("Name Field Is Not A HTMLInputElement");
+        return;
     }
-});
 
-// DB HANDLING
-async function getDB() {
-    return new Promise((resolve, reject) => {
-        const sheetdb_request = indexedDB.open("SheetDatabase", 1);
-        sheetdb_request.onupgradeneeded = (event) => {
-            const db = event.target.result;
+    const name = name_field.value;
 
-            if (!db.objectStoreNames.contains("sheets")) {
-                db.createObjectStore("sheets", {
-                    keyPath: "id"
-                });
-            }
-        };
+    sheet.id = crypto.randomUUID();
+    sheet.name = name.length == 0 ? "Nova Ficha" : name;
+    
+    const tx = db.transaction("sheets", "readwrite");
+    const store = tx.objectStore("sheets");
 
-        sheetdb_request.onsuccess = () => resolve(sheetdb_request.result);
-        sheetdb_request.onerror = () => reject(sheetdb_request.error);
-    });
-}
+    const request = store.add(sheet);
 
-// LOAD EXISTING SHEETS
+    request.onerror = () => console.error(request.error);
+    request.onsuccess = () => {
+        window.location.href = `/sheets/edit/?id=${encodeURIComponent(sheet.id)}`;
+    };
+})
+
+popup.button("#dont-create-sheet-button", () => {popup.close();})
+
+const add_sheet_button = document.getElementById("sheet-add");
+add_sheet_button.addEventListener("click", () => popup.open())
+
+// Populate Sheets
 const template_sheet_element = document.getElementById("sheet-template");
 const sheet_container_element = document.getElementById("sheet-container");
-async function populateSheetContainer() {
-    const sheets = await getAllSheets();
-    for (const sheet of sheets){
-        const clone = template_sheet_element.content.cloneNode(true);
 
-        const root = clone.querySelector(".sheet");
-        const image = clone.querySelector(".sheet-image");
-        const text = clone.querySelector(".sheet-text");
+if (!(template_sheet_element instanceof HTMLTemplateElement))
+    throw new Error("sheet-template is missing or not a template element");
 
-        image.src = sheet.image;
+const sheets = await SheetDB.getAllSheets();
 
-        text.textContent = sheet.name;
-        root.addEventListener("click", () => {
-            window.location.href = `/sheets/edit/?id=${encodeURIComponent(sheet.id)}`;
-        });
+for (const sheet of sheets){
+    const clone =
+        /**@type {HTMLElement} */
+        (template_sheet_element.content.cloneNode(true));
 
-        sheet_container_element.appendChild(clone);
-    }
-} populateSheetContainer();
+    const root = clone.querySelector(".sheet");
+    const image = clone.querySelector(".sheet-image");
+    const text = clone.querySelector(".sheet-text");
 
-// SHEET HELPERS
-const template_sheet = {
-    id: 0, name: "", image: "",
-    data: {}
-}
+    if (image instanceof HTMLImageElement)
+        image.src = URL.createObjectURL(sheet.image);
 
-async function getAllSheets() {
-    const db = await getDB();
-
-    return new Promise((resolve, reject) => {
-        const tx = db.transaction("sheets", "readonly");
-        const store = tx.objectStore("sheets");
-
-        const request = store.getAll();
-
-        request.onsuccess = () => resolve(request.result);
-        request.onerror = () => reject(request.error);
+    text.textContent = sheet.name;
+    root.addEventListener("click", () => {
+        window.location.href = `/sheets/edit/?id=${encodeURIComponent(sheet.id)}`;
     });
-}
 
-async function createNewSheet() {
-    const db = await getDB();
-    const new_sheet = structuredClone(template_sheet);
-    const name = sheet_name_field.value;
-
-    new_sheet.id = crypto.randomUUID();
-    new_sheet.name = name.length == 0 ? "Nova Ficha" : name;
-    
-    return new Promise((resolve, reject) => {
-        const tx = db.transaction("sheets", "readwrite");
-        const store = tx.objectStore("sheets");
-
-        const request = store.add(new_sheet);
-
-        request.onsuccess = () => resolve(new_sheet);
-        request.onerror = () => reject(request.error);
-    });
+    sheet_container_element.appendChild(clone);
 }

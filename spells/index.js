@@ -1,17 +1,28 @@
-let tableData = [];
+//@ts-ignore
+import Papa from "https://cdn.jsdelivr.net/npm/papaparse@5.4.1/+esm";
+import "/assets/scripts/init.js";
 
-Papa.parse("/assets/spells.csv", {
-    download: true,
-    header: false,
-    skipEmptyLines: true,
-    complete: function(results) {
-        buildTable(results.data);
-    }
+const filterIds = [
+    "Elements", "Name", "Degree", "Cost",
+    "Duration", "Time", "Range", "Requirements"
+];
+
+document.addEventListener("input", (e) => {
+    const element = e.target;
+    if (!(element instanceof HTMLInputElement)) return;
+    if (filterIds.some((s) => element.id === s))
+        filterTable();
 });
 
-function buildTable(data) {
-    let tbody = document.querySelector("#table tbody");
+Papa.parse("/assets/data/spells.csv", {
+    download: true, header: false,
+    skipEmptyLines: true,
+    complete: (results) => buildTable(results.data)
+});
 
+/**@type {(data: any) => void} */
+function buildTable(data) {
+    const tbody = document.querySelector("#table tbody");
     tbody.innerHTML = "";
 
     for (let i = 1; i < data.length; i++) {
@@ -26,19 +37,18 @@ function buildTable(data) {
     }
 }
 
+/**@type {() => void} */
 function filterTable() {
-    const filterIds = [
-    "Elements", "Name", "Degree", "Cost",
-    "Duration", "Time", "Range", "Requirements"
-    ];
-
-    const filters = filterIds.map(id =>
-        normalize(document.getElementById(id).value)
-    );
+    const filters = filterIds.map(id => {
+        const element = document.getElementById(id);
+        if (element instanceof HTMLInputElement)
+            return normalize(element.value)
+        else return null;
+    });
 
     const rows = document.querySelectorAll("#table tbody tr");
-
     rows.forEach(row => {
+        if (!(row instanceof HTMLElement)) return;
         const cols = row.querySelectorAll("td");
 
         let match = true;
@@ -48,20 +58,17 @@ function filterTable() {
 
             if (!filter) continue;
 
-            if (i == 0){
+            // Spell Element Filter
+            if (i === 0){
                 const terms = filter.split(",").map(t => t.trim()).filter(Boolean);
-
-                const elementMatch = terms.some(term =>
-                    cellText.includes(term)
-                );
-
+                const elementMatch = terms.some(term => cellText.includes(term));
                 if (!elementMatch) {
                     match = false;
                     break;
                 }
-
             }
 
+            // Spell Grade Filter
             else if (i === 2) {
                 if (!compareNumber(cellText, filter)){
                     match = false;
@@ -69,20 +76,17 @@ function filterTable() {
                 }
             }
 
+            // Spell Requirement Filter
             else if (i === 7) {
                 const terms = filter.split(",").map(t => t.trim()).filter(Boolean);
-
-                const requirementMatch = terms.every(term =>
-                    cellText.includes(term)
-                );
-
+                const requirementMatch = terms.every(term => cellText.includes(term));
                 if (!requirementMatch) {
                     match = false;
                     break;
                 }
-
             }
             
+            // Default Filter Behavior
             else {
                 if (!cellText.includes(filter)) {
                     match = false;
@@ -95,6 +99,7 @@ function filterTable() {
   });
 }
 
+/**@type {(type: string) => string} */
 function normalize(text) {
   return text
     .toLowerCase()
@@ -102,6 +107,7 @@ function normalize(text) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+/**@type {(cellValue: string, filterValue: string) => boolean} */
 function compareNumber(cellValue, filterValue) {
     const num = parseFloat(cellValue);
 
