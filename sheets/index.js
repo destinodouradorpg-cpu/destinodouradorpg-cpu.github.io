@@ -1,6 +1,9 @@
 import * as Prompt from "/assets/scripts/prompts.js"
-import * as SheetDB from "/assets/scripts/sheet-database.js"
-import "/assets/scripts/init.js"
+import * as SheetDB from "/assets/scripts/sheet/sheet-database.js"
+import {Sheet} from "/assets/scripts/sheet/sheet.js"
+import "../assets/scripts/base.js"
+
+const nav = performance.getEntriesByType("navigation")[0];
 
 // BUTTON HANDLING
 const popup = await Prompt.loadPrompt("/assets/html/prompts/create-sheet.html", () => {});
@@ -13,7 +16,7 @@ popup.addEventListener("on-open", () => {
 
 popup.button("#create-sheet-button", async () => {
     const db = await SheetDB.getDB();
-    const sheet = SheetDB.Sheet.empty();
+    const sheet = Sheet.empty();
 
     const name_field = popup.base.querySelector("#sheet-name-field")
     if (!(name_field instanceof HTMLInputElement)){
@@ -60,7 +63,7 @@ for (const sheet of sheets){
     const image = clone.querySelector(".sheet-image");
     const text = clone.querySelector(".sheet-text");
 
-    if (image instanceof HTMLImageElement)
+    if (sheet.image && image instanceof HTMLImageElement)
         image.src = URL.createObjectURL(sheet.image);
 
     text.textContent = sheet.name;

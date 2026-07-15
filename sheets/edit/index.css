@@ -19,16 +19,18 @@ label {
 .inner-column {
     padding: 0;
     max-width: 800px;
+    margin: 12px 8px 0 8px;
 
     justify-self: center;
+    background-image: none;
 }
 
 .category {
     margin: 16px 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.75);
 
     padding: 16px clamp(4px, 2vw, 48px);
-    border-radius: 16px 16px 0px 0px;
+    border-radius: 16px;
 }
 
 .cell {
@@ -126,7 +128,7 @@ label {
     justify-content: center;
 }
 
-.attribute-cell {
+sheet-attribute {
     width: 100%;
     padding-top: 16px;
     padding-bottom: 8px;
@@ -140,7 +142,7 @@ label {
     cursor: pointer;
 }
 
-.attribute-cell > * {pointer-events: none;}
+sheet-attribute > * {pointer-events: none;}
 #attribute-prompt > .prompt {width: 50vw;}
 #attribute-prompt-close {
     padding: 8px 60px;
@@ -161,10 +163,12 @@ label {
     gap: 4px;
 }
 
-.skill-cell > h3 {margin: 0;}
-.skill-cell > p {text-wrap: wrap;}
-.skill-cell {
+sheet-skill > h3 {margin: 0;}
+sheet-skill > p {text-wrap: wrap;}
+sheet-skill {
     width: 100%;
     padding-top: 16px;
     padding-bottom: 8px;
+
+    cursor: pointer;
 }

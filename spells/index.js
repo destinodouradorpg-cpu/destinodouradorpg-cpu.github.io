@@ -1,6 +1,6 @@
 //@ts-ignore
 import Papa from "https://cdn.jsdelivr.net/npm/papaparse@5.4.1/+esm";
-import "/assets/scripts/init.js";
+import "../assets/scripts/base.js";
 
 const filterIds = [
     "Elements", "Name", "Degree", "Cost",

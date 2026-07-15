@@ -1,0 +1,69 @@
+<div id="skill-prompt" class="prompt-container" attribute-key="">
+    <div class="prompt">
+        <span class="font-size-title-s text-lines">Habilidade</span>
+        <input 
+         id="skill-name-field"
+         type="text"
+         class="alt-color font-size-text old-standard-tt-regular"
+         maxlength="12"
+         placeholder="Nome"
+        >
+
+        <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+            <div>
+                <label for="skill-action-field">Ação:</label>
+                <select
+                name="skill-action-field"
+                id="skill-action-field"
+                class="old-standard-tt-regular font-size-text"
+                >
+                    <option>Livre</option>
+                    <option>Movimento</option>
+                    <option>Bônus</option>
+                    <option>Principal</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="skill-cost-field">Custo:</label>
+                <input 
+                id="skill-cost-field"
+                type="number"
+                min="-999" max="999" value="0"
+                class="alt-color font-size-text old-standard-tt-regular"
+                >
+                <select
+                name="skill-cost-type-field"
+                id="skill-cost-type-field"
+                class="old-standard-tt-regular font-size-text"
+                >
+                    <option>PE</option>
+                    <option>PV</option>
+                    <option>PS</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label for="skill-upgrade-field">Melhorias:</label>
+            <input 
+                id="skill-upgrade-field"
+                name="skill-upgrade-field"
+                type="number"
+                min="-999" max="999" value="0"
+                class="alt-color font-size-text old-standard-tt-regular"
+            >
+        </div>
+
+        <textarea
+            id="skill-description-field"
+            placeholder="Descrição"
+            class="old-standard-tt-regular font-size-text"
+        ></textarea>
+
+        <button
+            id="skill-prompt-close"
+            class="old-standard-tt-regular font-size-text alt-color"
+        >Fechar</button>
+    </div>
+</div>
