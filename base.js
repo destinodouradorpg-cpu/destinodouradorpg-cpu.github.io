@@ -2,7 +2,7 @@ const body = document.querySelector("body");
 
 /* Load Menu */
 (async () => {
-    const menu_file = await fetch("/assets/html/menu.html");
+    const menu_file = await fetch("/html/menu.html");
     if (!menu_file.ok) {
         console.log(`Could Not Load Menu File`);
         return;
@@ -33,7 +33,7 @@ const body = document.querySelector("body");
 
 /* Load Footer */
 (async () => {
-    const footer_file = await fetch("/assets/html/footer.html");
+    const footer_file = await fetch("/html/footer.html");
     if (!footer_file.ok) {
         console.log(`Could Not Load Footer File`);
         return;

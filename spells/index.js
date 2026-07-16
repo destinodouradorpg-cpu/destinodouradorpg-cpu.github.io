@@ -1,6 +1,6 @@
 //@ts-ignore
 import Papa from "https://cdn.jsdelivr.net/npm/papaparse@5.4.1/+esm";
-import "../assets/scripts/base.js";
+import "/base.js";
 
 const filterIds = [
     "Elements", "Name", "Degree", "Cost",
@@ -14,7 +14,7 @@ document.addEventListener("input", (e) => {
         filterTable();
 });
 
-Papa.parse("/assets/data/spells.csv", {
+Papa.parse("/data/spells.csv", {
     download: true, header: false,
     skipEmptyLines: true,
     complete: (results) => buildTable(results.data)

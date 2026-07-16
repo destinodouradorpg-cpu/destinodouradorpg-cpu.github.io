@@ -1,1 +1,1 @@
-import "../assets/scripts/base.js"
+import "/base.js"

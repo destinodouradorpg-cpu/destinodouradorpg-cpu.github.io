@@ -1,11 +1,11 @@
-import * as Prompt from "/assets/scripts/prompts.js"
-import * as SheetDB from "/assets/scripts/sheet/sheet-database.js"
+import * as Prompt from "/components/prompts.js"
+import * as SheetDB from "/components/sheet/sheet-database.js"
 
-import {Sheet, fromData} from "/assets/scripts/sheet/sheet.js"
-import { HTMLSKill, Skill, SkillAction, SkillCostType } from "/assets/scripts/sheet/skill.js"
-import { getCSV, getFieldOfKey } from "/assets/scripts/csvdata.js"
+import {Sheet, fromData} from "/components/sheet/sheet.js"
+import { HTMLSKill, Skill, SkillAction, SkillCostType } from "/components/sheet/skill.js"
+import { getCSV, getFieldOfKey } from "/components/csvdata.js"
 
-import "../../assets/scripts/base.js"
+import "/base.js"
 
 // ============================
 // Init
@@ -29,7 +29,7 @@ const params = new URLSearchParams(window.location.search);
 
 if (sheet === undefined) SheetDB.invalidSheet(`Invalid Sheet ID: ${params.get("id")}`);
 
-const race_characteristics = await getCSV("/assets/data/races.csv");
+const race_characteristics = await getCSV("/data/races.csv");
 
 // ============================
 // Classes
@@ -159,7 +159,7 @@ class LabeledNumberInput extends HTMLElement {
 // PROMPTS
 // ============================
 
-const attribute_prompt = await Prompt.loadPrompt("/assets/html/prompts/attribute.html", () => {});
+const attribute_prompt = await Prompt.loadPrompt("/html/prompts/attribute.html", () => {});
 attribute_prompt.button("#attribute-prompt-close", () => attribute_prompt.close())
 attribute_prompt.addEventListener("on-update", (e) => {
     if (!(e instanceof CustomEvent)) return;
@@ -170,7 +170,7 @@ attribute_prompt.addEventListener("on-update", (e) => {
     attribute_prompt.base.setAttribute("attribute-key", data.attribute_key)
 })
 
-const skill_prompt = await Prompt.loadPrompt("/assets/html/prompts/skill.html", () => {});
+const skill_prompt = await Prompt.loadPrompt("/html/prompts/skill.html", () => {});
 skill_prompt.button("#skill-prompt-close", () => skill_prompt.close());
 skill_prompt.addEventListener("on-update", (e) => {
     if (!(e instanceof CustomEvent)) return;

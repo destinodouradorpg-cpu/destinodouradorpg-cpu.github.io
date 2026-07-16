@@ -1,12 +1,12 @@
-import * as Prompt from "/assets/scripts/prompts.js"
-import * as SheetDB from "/assets/scripts/sheet/sheet-database.js"
-import {Sheet} from "/assets/scripts/sheet/sheet.js"
-import "../assets/scripts/base.js"
+import * as Prompt from "/components/prompts.js"
+import * as SheetDB from "/components/sheet/sheet-database.js"
+import {Sheet} from "/components/sheet/sheet.js"
+import "/base.js"
 
 const nav = performance.getEntriesByType("navigation")[0];
 
 // BUTTON HANDLING
-const popup = await Prompt.loadPrompt("/assets/html/prompts/create-sheet.html", () => {});
+const popup = await Prompt.loadPrompt("/html/prompts/create-sheet.html", () => {});
 
 popup.addEventListener("on-open", () => {
     const name_field = popup.base.querySelector("#sheet-name-field");
