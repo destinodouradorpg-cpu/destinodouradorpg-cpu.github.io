@@ -1,9 +1,29 @@
 import {Sheet} from "./sheet.js"
 
+// =============================
+// CLASSES
+// =============================
+
+export class SheetObject {
+    /** @type {string}*/ path_id;
+
+    constructor(
+        /** @type {string} */ path_id
+    ) {this.path_id = path_id;}
+
+    /** @type {(value: any) => void} */
+    setValue(value) {WorkingSheet.Get()?.setPath(this.path_id, value);}
+    getValue() {return WorkingSheet.Get()?.getPath(this.path_id);}
+}
+
+// =============================
+// FUNCTIONS
+// =============================
+
 /**@type {IDBDatabase} */
 let loaded_db = undefined;
-
 /**@type {() => Promise<IDBDatabase>} */
+
 export async function getDB() {
     if (loaded_db !== undefined) return loaded_db;
     return new Promise((resolve, reject) => {
@@ -30,37 +50,6 @@ export async function getDB() {
     });
 }
 
-export class SheetElement {
-    /** @type {Sheet}*/ sheet;
-    /** @type {string}*/ path_id;
-
-    constructor(
-        /** @type {Sheet} */ sheet,
-        /** @type {string} */ path_id
-    ) {
-        this.sheet = sheet;
-        this.path_id = path_id;
-    }
-
-    /** @type {(value: any) => void} */
-    setValue(value) {
-        this.sheet.setPath(this.path_id, value);
-        const event = new CustomEvent("sheet-element", {detail: {
-            object: this,
-            path_id : this.path_id,
-            value : value
-        }})
-
-        document.dispatchEvent(event);
-    }
-
-    getValue() {return this.sheet.getPath(this.path_id);}
-}
-
-// =============================
-// FUNCTIONS
-// =============================
-
 /**@type {() => Promise<Sheet[]>} */
 export async function getAllSheets() {
     const db = await getDB();
@@ -74,6 +63,17 @@ export async function getAllSheets() {
         request.onsuccess = () => resolve(request.result);
         request.onerror = () => reject(request.error);
     });
+}
+
+export class WorkingSheet {
+    /**@type {Sheet | undefined} */
+    static current;
+
+    /**@type {() => Sheet | undefined} */
+    static Get() {return this.current;}
+
+    /**@type {(Sheet) => void} */
+    static Set(sheet) {this.current = sheet;}
 }
 
 /**@type {(sheet: Sheet) => Promise<void>} */

@@ -12,7 +12,7 @@
     <meta property="og:description" content="'Sheets' e não 'Shits'">
 </head>
 
-<body class="font-size-text old-standard-tt-regular">
+<body class="font-size-text font-default">
     
     <div class="inner-column opaque-background">
         <h1 id="main-title" class="font-size-title title title-lines">Ficha</h1>
@@ -23,18 +23,18 @@
 
             <div id="general-container">
                 <input 
-                id="name-field"
-                type="text"
-                class="alt-color font-size-text old-standard-tt-regular" 
-                placeholder="Nome"
-                sheet-path="name"
+                 id="name-field"
+                 type="text"
+                 class="alt-color font-size-text font-default" 
+                 placeholder="Nome"
+                 sheet-path="name"
                 >
 
                 <input id="player-field"
-                type="text"
-                class="alt-color font-size-text old-standard-tt-regular" 
-                placeholder="Jogador"
-                sheet-path="player"
+                 type="text"
+                 class="alt-color font-size-text font-default" 
+                 placeholder="Jogador"
+                 sheet-path="player"
                 >
 
                 <div id="sheet-image-container">
@@ -63,7 +63,7 @@
                 <select
                  id="race-selector"
                  name="race"
-                 class="old-standard-tt-regular font-size-text"
+                 class="font-default font-size-text"
                  sheet-path="race"
                 >
                     <option>Humano</option><option>Elfo</option>
@@ -84,13 +84,13 @@
                 </select>
 
                 <label for="class">Classe:</label>
-                <div style="grid-column: 2/4; display: flex; flex-wrap: wrap; gap: 8px">
+                <div style="grid-column: 2/4; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
                     <select
                      id="class-selector"
                      name="class"
-                     class="old-standard-tt-regular font-size-text"
+                     class="font-default font-size-text"
                      sheet-path="class"
-                     style="width: 100%; justify-self: left;"
+                     style="grid-column: 1 / -1;"
                     >
                         <option>Alquimista</option><option>Artista</option>
                         <option>Bárbaro</option><option>Domador</option>
@@ -103,10 +103,13 @@
                         <option>Pugilista</option><option>Ritualista</option>
                         <option>Sacerdote</option><option>Vigarista</option>
                     </select>
-
-                    <label style="height: auto;">
-                        <input type="checkbox">
+                    <label style="height: auto; justify-self: center;">
+                        <input id="mundane-button" type="checkbox" sheet-path="isMundane">
                         Mundano
+                    </label>
+                    <label style="height: auto; justify-self: center;">
+                        <input id="necromancer-button" type="checkbox" sheet-path="isNecromancer">
+                        Necromante
                     </label>
                 </div>
 
@@ -176,7 +179,9 @@
                         " class="text-lines"
                     >Conhecimentos</h3>
                     <div style="display: flex; flex-direction: column;">
-                        <span>· De Classe: <span>---</span></span>
+                        <span>· De Classe: 
+                            <span id="class-knowlage" style="text-decoration: underline;">---</span>
+                        </span>
                         <div id="knowlage-container">
 
                         </div>

@@ -305,6 +305,11 @@ input[type="checkbox"]:disabled {
     background-color: var(--MainShadowColorDark);
     border: 1px solid var(--MainShadowColor);
 }
+
+input:disabled {
+    cursor: not-allowed;
+}
+
 select {
     background-color: transparent;
     color: var(--GeneralTextColor);
@@ -320,6 +325,12 @@ label {
     height: min-content;
     align-items: center;
     align-self: center;
+}
+
+label:has(input:disabled) {
+    color: var(--MainShadowColor);
+    text-shadow: var(--MainShadowColorDark) 1px 1px;
+    cursor: not-allowed;
 }
 
 html {

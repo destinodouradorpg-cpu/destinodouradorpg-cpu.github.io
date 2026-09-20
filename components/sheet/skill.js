@@ -22,29 +22,3 @@ export class Skill {
     /** @type {string}*/ description;
     /** @type {number}*/ upgrades;
 }
-
-export class HTMLSKill extends HTMLElement {
-    
-
-    connectedCallback() {
-        const skill_idx = this.getAttribute("idx");
-
-        this.classList += `cell`;
-        this.setAttribute("sheet-path", `skills.${skill_idx}`);
-
-        this.innerHTML = `
-            <h3 class="text-lines">Habilidade ${skill_idx}</h3>
-            <div>
-                <span>Ação: <span>---</span></span>
-                |
-                <span>Custo: <span>---</span></span>
-            </div>
-            <p></p>
-            <span>Melhorias: <span>0</span></span>
-        `;
-    }
-
-    static {
-        customElements.define("sheet-skill", HTMLSKill);
-    }
-}

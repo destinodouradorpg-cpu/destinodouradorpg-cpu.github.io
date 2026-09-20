@@ -1,0 +1,181 @@
+{
+    "Alquimista": {
+        "element": "",
+        "knowlages": ["Alquimia"],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 3,
+        "canBeMundane": false,
+        "canBeNecromancer": false
+    },
+
+    "Artista": {
+        "element": "Cinético",
+        "knowlages": ["Artes"],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 2,
+        "canBeMundane": false,
+        "canBeNecromancer": true
+    },
+
+    "Bárbaro": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 1,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    },
+
+    "Domador": {
+        "element": "",
+        "knowlages": ["Adestramento"],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 2,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    },
+
+    "Druída": {
+        "element": "",
+        "knowlages": ["Fauna", "Flora"],
+        "knowlagesToLearn": 2,
+        "elementsToLearn": 4,
+        "canBeMundane": false,
+        "canBeNecromancer": true
+    },
+
+    "Feiticeiro": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 5,
+        "canBeMundane": false,
+        "canBeNecromancer": true
+    },
+
+    "Fera": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 3,
+        "canBeMundane": true,
+        "canBeNecromancer": true
+    },
+
+    "Flecheiro": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 4,
+        "elementsToLearn": 2,
+        "canBeMundane": false,
+        "canBeNecromancer": false
+    },
+
+    "Guardião": {
+        "element": "",
+        "knowlages": ["Tática"],
+        "knowlagesToLearn": 2,
+        "elementsToLearn": 1,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    },
+
+    "Guerreiro": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 1,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    },
+
+    "Inventor": {
+        "element": "",
+        "knowlages": ["Mecanismos"],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 2,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    },
+
+    "Ladino": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 6,
+        "elementsToLearn": 2,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    },
+
+    "Mago": {
+        "element": "",
+        "knowlages": ["Arcanismo"],
+        "knowlagesToLearn": 4,
+        "elementsToLearn": 4,
+        "canBeMundane": false,
+        "canBeNecromancer": true
+    },
+
+    "Mosqueteiro": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 1,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    },
+
+    "Pistoleiro": {
+        "element": "",
+        "knowlages": ["Mecanismos"],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 1,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    },
+
+    "Prospector": {
+        "element": "",
+        "knowlages": ["Forja"],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 3,
+        "canBeMundane": false,
+        "canBeNecromancer": true
+    },
+
+    "Pugilista": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 4,
+        "elementsToLearn": 2,
+        "canBeMundane": false,
+        "canBeNecromancer": false
+    },
+
+    "Ritualista": {
+        "element": "",
+        "knowlages": ["Ocultismo"],
+        "knowlagesToLearn": 3,
+        "elementsToLearn": 4,
+        "canBeMundane": false,
+        "canBeNecromancer": true
+    },
+
+    "Sacerdote": {
+        "element": "Luz",
+        "knowlages": ["Religião"],
+        "knowlagesToLearn": 2,
+        "elementsToLearn": 3,
+        "canBeMundane": false,
+        "canBeNecromancer": true
+    },
+
+    "Vigarista": {
+        "element": "",
+        "knowlages": [],
+        "knowlagesToLearn": 5,
+        "elementsToLearn": 3,
+        "canBeMundane": true,
+        "canBeNecromancer": false
+    }
+}

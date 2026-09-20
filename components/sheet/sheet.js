@@ -9,6 +9,9 @@ export class Sheet {
     /** @type {string}*/ player;
     /** @type {string}*/ race;
     /** @type {string}*/ class;
+    /** @type {boolean}*/ isMundane;
+    /** @type {boolean}*/ isNecromancer;
+
     /** @type {string}*/ level;
 
     /** @type {string}*/ hp_base;
@@ -59,6 +62,9 @@ export class Sheet {
         sheet.player = "";
         sheet.race = "Humano";
         sheet.class = "Alquimista";
+        sheet.isMundane = false;
+        sheet.isNecromancer = false;
+
         sheet.level = "0";
 
         sheet.hp_base = "0";

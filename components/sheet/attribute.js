@@ -20,21 +20,3 @@ export class Attributes {
             this.mind;
     }
 }
-
-export class HTMLAttribute extends HTMLElement {
-    connectedCallback(){
-        const type = this.getAttribute("type");
-
-        this.classList += "cell";
-        this.setAttribute("sheet-path", `attribute.${type}`);
-
-        this.innerHTML = `
-            <span class="attribute-name">${this.getAttribute("name")}</span>
-            <span class="attribute-value">0/5</span>
-        `;
-    }
-
-    static {
-        customElements.define("sheet-attribute", HTMLAttribute);
-    }
-}
